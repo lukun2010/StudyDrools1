@@ -1,0 +1,7 @@
+package com.querymore.jobscheduler.rule
+
+import com.querymore.jobscheduler.model.Task
+
+query "task id equal to x" (int x)
+	task : Task( taskId == x )
+end
