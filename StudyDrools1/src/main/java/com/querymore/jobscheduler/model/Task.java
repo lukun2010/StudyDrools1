@@ -9,6 +9,13 @@ public class Task {
 	private Date lastRunTime;
 	private Date nextBeginTime;
 	
+	public Task() {
+		taskId = -1;
+		taskName = "";
+		lastRunTime = null;
+		nextBeginTime = null;
+	}
+	
 	public Task(Integer taskId, String taskName, Date lastRunTime, Date nextBeginTime) {
 		this.taskId = taskId;
 		this.taskName = taskName;

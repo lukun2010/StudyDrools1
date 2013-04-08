@@ -6,9 +6,32 @@
 </head>
 <body>
 
-    <script src="jquery-1.9.1.js"></script>
+	<button type="button">Click Me!</button>
+
+    <script src="./jquery-1.9.1.js"></script>
     <script>
-    alert("I am here!");
+    
+    $("button").click(function(){
+    	        
+        var task = {"taskId": 1, "taskName": "Task1", "lastRunTime": "", "nextBeginTime": ""};
+        
+        $.ajax({
+        	type: "POST",
+        	url: "./task",
+            // The key needs to match your method's input parameter (case-sensitive).
+        	data: JSON.stringify(task),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+            	alert(JSON.stringify(data));
+            },
+            failure: function(errMsg) {
+                alert(errMsg);
+            }
+            
+        });
+    });
+    
     </script>
 
 </body>
